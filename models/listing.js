@@ -7,18 +7,12 @@ const listeningSchema=new Schema({
     },
     description:String,
     image: {
-        filename: {
-            type: String,
-            default: "listingimage"
-        },
-        url: {
-            type: String,
-            default: "https://unsplash.com/photos/seashore-during-golden-hour-KMn4VEeEPR8",
-            set: (v) => v === "" 
-                ? "https://unsplash.com/photos/seashore-during-golden-hour-KMn4VEeEPR8"
-                : v
-        }
-    },
+    url: {
+    type: String,
+    required: true   // makes sure you must add it
+  }
+}
+,
     price:Number,
     location:String,
     country:String,
