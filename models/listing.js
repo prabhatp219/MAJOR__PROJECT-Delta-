@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+const { listingSchema } = require("../schema");
 const Schema=mongoose.Schema;
 const listeningSchema=new Schema({
     title:{
@@ -24,6 +25,10 @@ const listeningSchema=new Schema({
         },
     ],
 });
+
+listingSchema.post("findOneAndDelete",async(listing)=>{
+    
+})
 
 const Listing=mongoose.model("Listing",listeningSchema);
 module.exports=Listing;
