@@ -9,14 +9,21 @@ const listeningSchema=new Schema({
     image: {
     url: {
     type: String,
-    required: true   // makes sure you must add it
-  }
+    // required: true   // makes sure you must add it
+  } 
 }
 ,
     price:Number,
     location:String,
     country:String,
-})
+
+    reviews:[
+        {
+            type:Schema.Types.ObjectId,
+            ref:"Review",
+        },
+    ],
+});
 
 const Listing=mongoose.model("Listing",listeningSchema);
 module.exports=Listing;
