@@ -1,8 +1,8 @@
 const mongoose=require("mongoose");
-// const { listingSchema } = require("../schema");
+const { listingSchema } = require("../schema");
 const Review=require("./review.js");
 const Schema=mongoose.Schema;
-const listingSchema=new Schema({
+const listeningSchema=new Schema({
     title:{
         type:String,
         required:true,
@@ -33,5 +33,5 @@ listingSchema.post("findOneAndDelete",async(listing)=>{
     }
 })
 
-const Listing=mongoose.model("Listing",listingSchema);
+const Listing=mongoose.model("Listing",listeningSchema);
 module.exports=Listing;
